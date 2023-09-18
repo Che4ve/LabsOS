@@ -30,7 +30,6 @@ int main(int argc, char** argv) {
     
     if (pid > 0) { 
         // Parent process
-
         // Open FIFO for writing
         int fd = open("PtoCFifo", O_WRONLY);
         if (fd == -1) {
