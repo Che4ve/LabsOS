@@ -49,7 +49,7 @@ int main(int argc, char** argv) {
     double result = static_cast<double>(numbers.front());
 
     for (int i = 1; i < numbers.size(); i++) {
-        int n = static_cast<double>(numbers.at(i));
+        double n = static_cast<double>(numbers.at(i));
 
         // Check for division by zero
         if (n == 0) {
