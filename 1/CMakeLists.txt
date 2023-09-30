@@ -5,4 +5,4 @@ set(CMAKE_CXX_STANDARD 20)
 SET(CMAKE_CXX_STANDARD_REQUIRED ON)
 
 add_executable("child.out" child.cpp)
-add_executable(${PROJECT_NAME} lab1.cpp)
+add_executable(${PROJECT_NAME} main.cpp)

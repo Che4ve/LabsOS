@@ -48,10 +48,10 @@ cmake_force:
 SHELL = /bin/sh
 
 # The CMake executable.
-CMAKE_COMMAND = /Applications/CMake.app/Contents/bin/cmake
+CMAKE_COMMAND = /usr/local/Cellar/cmake/3.27.5/bin/cmake
 
 # The command to remove a file.
-RM = /Applications/CMake.app/Contents/bin/cmake -E rm -f
+RM = /usr/local/Cellar/cmake/3.27.5/bin/cmake -E rm -f
 
 # Escaping for special characters.
 EQUALS = =
@@ -78,7 +78,7 @@ edit_cache/fast: edit_cache
 # Special rule for the target rebuild_cache
 rebuild_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --cyan "Running CMake to regenerate build system..."
-	/Applications/CMake.app/Contents/bin/cmake --regenerate-during-build -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
+	/usr/local/Cellar/cmake/3.27.5/bin/cmake --regenerate-during-build -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
 .PHONY : rebuild_cache
 
 # Special rule for the target rebuild_cache
@@ -166,29 +166,29 @@ child.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/child.out.dir/build.make CMakeFiles/child.out.dir/child.cpp.s
 .PHONY : child.cpp.s
 
-lab1.o: lab1.cpp.o
-.PHONY : lab1.o
+main.o: main.cpp.o
+.PHONY : main.o
 
 # target to build an object file
-lab1.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/lab.dir/build.make CMakeFiles/lab.dir/lab1.cpp.o
-.PHONY : lab1.cpp.o
+main.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lab.dir/build.make CMakeFiles/lab.dir/main.cpp.o
+.PHONY : main.cpp.o
 
-lab1.i: lab1.cpp.i
-.PHONY : lab1.i
+main.i: main.cpp.i
+.PHONY : main.i
 
 # target to preprocess a source file
-lab1.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/lab.dir/build.make CMakeFiles/lab.dir/lab1.cpp.i
-.PHONY : lab1.cpp.i
+main.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lab.dir/build.make CMakeFiles/lab.dir/main.cpp.i
+.PHONY : main.cpp.i
 
-lab1.s: lab1.cpp.s
-.PHONY : lab1.s
+main.s: main.cpp.s
+.PHONY : main.s
 
 # target to generate assembly for a file
-lab1.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/lab.dir/build.make CMakeFiles/lab.dir/lab1.cpp.s
-.PHONY : lab1.cpp.s
+main.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/lab.dir/build.make CMakeFiles/lab.dir/main.cpp.s
+.PHONY : main.cpp.s
 
 # Help Target
 help:
@@ -203,9 +203,9 @@ help:
 	@echo "... child.o"
 	@echo "... child.i"
 	@echo "... child.s"
-	@echo "... lab1.o"
-	@echo "... lab1.i"
-	@echo "... lab1.s"
+	@echo "... main.o"
+	@echo "... main.i"
+	@echo "... main.s"
 .PHONY : help
 
 

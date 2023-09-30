@@ -44,10 +44,10 @@ cmake_force:
 SHELL = /bin/sh
 
 # The CMake executable.
-CMAKE_COMMAND = /Applications/CMake.app/Contents/bin/cmake
+CMAKE_COMMAND = /usr/local/Cellar/cmake/3.27.5/bin/cmake
 
 # The command to remove a file.
-RM = /Applications/CMake.app/Contents/bin/cmake -E rm -f
+RM = /usr/local/Cellar/cmake/3.27.5/bin/cmake -E rm -f
 
 # Escaping for special characters.
 EQUALS = =
@@ -69,28 +69,28 @@ include CMakeFiles/lab.dir/progress.make
 # Include the compile flags for this target's objects.
 include CMakeFiles/lab.dir/flags.make
 
-CMakeFiles/lab.dir/lab1.cpp.o: CMakeFiles/lab.dir/flags.make
-CMakeFiles/lab.dir/lab1.cpp.o: /Users/che4ve/MAI/LabsOSI/1/lab1.cpp
-CMakeFiles/lab.dir/lab1.cpp.o: CMakeFiles/lab.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/che4ve/MAI/LabsOSI/1/Build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/lab.dir/lab1.cpp.o"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/lab.dir/lab1.cpp.o -MF CMakeFiles/lab.dir/lab1.cpp.o.d -o CMakeFiles/lab.dir/lab1.cpp.o -c /Users/che4ve/MAI/LabsOSI/1/lab1.cpp
+CMakeFiles/lab.dir/main.cpp.o: CMakeFiles/lab.dir/flags.make
+CMakeFiles/lab.dir/main.cpp.o: /Users/che4ve/MAI/LabsOSI/1/main.cpp
+CMakeFiles/lab.dir/main.cpp.o: CMakeFiles/lab.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=/Users/che4ve/MAI/LabsOSI/1/Build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/lab.dir/main.cpp.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/lab.dir/main.cpp.o -MF CMakeFiles/lab.dir/main.cpp.o.d -o CMakeFiles/lab.dir/main.cpp.o -c /Users/che4ve/MAI/LabsOSI/1/main.cpp
 
-CMakeFiles/lab.dir/lab1.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/lab.dir/lab1.cpp.i"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/che4ve/MAI/LabsOSI/1/lab1.cpp > CMakeFiles/lab.dir/lab1.cpp.i
+CMakeFiles/lab.dir/main.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/lab.dir/main.cpp.i"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /Users/che4ve/MAI/LabsOSI/1/main.cpp > CMakeFiles/lab.dir/main.cpp.i
 
-CMakeFiles/lab.dir/lab1.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/lab.dir/lab1.cpp.s"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/che4ve/MAI/LabsOSI/1/lab1.cpp -o CMakeFiles/lab.dir/lab1.cpp.s
+CMakeFiles/lab.dir/main.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/lab.dir/main.cpp.s"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /Users/che4ve/MAI/LabsOSI/1/main.cpp -o CMakeFiles/lab.dir/main.cpp.s
 
 # Object files for target lab
 lab_OBJECTS = \
-"CMakeFiles/lab.dir/lab1.cpp.o"
+"CMakeFiles/lab.dir/main.cpp.o"
 
 # External object files for target lab
 lab_EXTERNAL_OBJECTS =
 
-lab: CMakeFiles/lab.dir/lab1.cpp.o
+lab: CMakeFiles/lab.dir/main.cpp.o
 lab: CMakeFiles/lab.dir/build.make
 lab: CMakeFiles/lab.dir/link.txt
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=/Users/che4ve/MAI/LabsOSI/1/Build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX executable lab"
