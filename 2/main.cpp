@@ -12,6 +12,8 @@
 #include <time.h>
 #include <unistd.h>
 
+#include <chrono>
+
 #define DEFAULT_THREAD_NUM 2
 
 int* findMinMax(int* arr, size_t size) {
@@ -46,9 +48,9 @@ void* threadWork(void* arg) {
     threadMessage* msg = (threadMessage*)arg;
     int id = msg->id;
     size_t size = msg->arraySize;
-    int* arr = msg->arrayPart;
+    int* arr = msg->arrayPart;  
 
-    int* found = findMinMax(arr, size);
+    int* found = findMinMax(arr, size); // 0 idx is MIN, 1 idx is MAX
 
     if (found == NULL) {
         std::cerr << "Error: Wrong array" << std::endl;
@@ -56,7 +58,7 @@ void* threadWork(void* arg) {
     }
     
     msg->localMinimums[id] = arr[found[0]];
-    msg->localMaxes[id] = arr[found[1]];
+    msg->localMaxes[id]    = arr[found[1]];
 
     delete[] found;
 
@@ -97,7 +99,9 @@ int main(int argc, char **argv) {
     // Thread messages List
     threadMessage* msgList = new threadMessage[threadsAmount];
 
-    clock_t begin = clock();
+    //clock_t begin = clock();
+
+    auto start_time = std::chrono::high_resolution_clock::now();
 
     int elemPerThread = n / threadsAmount;
     int elemRemain = n % threadsAmount;
@@ -140,15 +144,21 @@ int main(int argc, char **argv) {
         }
     }
 
-    clock_t end = clock();
+    //clock_t end = clock();
+
+    auto end_time = std::chrono::high_resolution_clock::now();
+    std::chrono::duration<double> parallel_duration = end_time - start_time;
+
 
     std::cout << "MAX: " << maxRes << std::endl;
     std::cout << "MIN: " << minRes << std::endl;
 
-    std::cout 
-        << "Epalsed " 
-        << static_cast<double>(end - begin) / CLOCKS_PER_SEC * 1000 
-        << "ms" << std::endl;
+    // std::cout 
+    //     << "Epalsed " 
+    //     << static_cast<double>(end - begin) / CLOCKS_PER_SEC * 1000 
+    //     << "ms" << std::endl;
+
+    std::cout << "Parallel Execution Time: " << parallel_duration.count() * 1000 << " ms" << std::endl;
 
     delete[] threadList;
     delete[] msgList;
