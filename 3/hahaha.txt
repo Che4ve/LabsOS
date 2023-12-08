@@ -1,0 +1,2 @@
+Values (message size 5): 5 4 1
+Answer: 1.25
